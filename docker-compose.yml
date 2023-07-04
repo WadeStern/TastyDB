@@ -1,0 +1,15 @@
+version: '3'
+volumes:
+  TastyDB:
+services:
+  db:
+    image: mariadb:10.11
+    environment:
+      MYSQL_ROOT_PASSWORD: Courtland01
+      MYSQL_DATABASE: tasty
+      MYSQL_USER: Dockeruser
+      MYSQL_PASSWORD: password
+    volumes:
+      - TastyDB:/var/lib/mysql/
+    ports:
+      - "3306:3306"
